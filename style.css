@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  width: 100%;
+  padding: 20px 0;
+}
+
+svg {
+  pointer-events: none;
+}
+
+.game-name {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.game-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #24272e;
+  width: 100%;
+  height: calc(100vh - 77px);
+  color: #fff;
+}
+
+.game-score {
+  margin: 20px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  font-size: 3rem;
+  padding: 1rem 3rem;
+  position: relative;
+}
+
+.game-score::before {
+  content: "user";
+  position: absolute;
+  top: 50%;
+  left: -20.565px;
+  transform: translateY(-50%);
+  background-color: #e2584d;
+  font-size: 1rem;
+  padding: 3px 5px;
+}
+
+.game-score::after {
+  content: "comp";
+  position: absolute;
+  top: 50%;
+  right: -24.565px;
+  transform: translateY(-50%);
+  background-color: #e2584d;
+  font-size: 1rem;
+  padding: 3px 5px;
+}
+
+.game-hint {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.user-guesses {
+  margin: 20px 0;
+  display: flex;
+}
+
+.user-guess {
+  border: 3px solid #fff;
+  padding: 15px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.user-guess[data-state="win"] {
+  border-color: green;
+  box-shadow: 0 0 15px green;
+}
+
+.user-guess[data-state="lose"] {
+  border-color: red;
+  box-shadow: 0 0 15px red;
+}
+
+.user-guess[data-state="draw"] {
+  border-color: gray;
+  box-shadow: 0 0 15px gray;
+}
+
+.user-guess:not(:last-child) {
+  margin-right: 20px;
+}
+
+.btn-reset {
+  outline: none;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #e2584d;
+}
